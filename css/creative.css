@@ -73,14 +73,14 @@ p.signature {
 }
 
 .connect ul {
+    padding-left: 0px;
     list-style-type: none;
     width: 200px;
     margin: 0 auto;
-
 }
 
 .connect li {
-    /*float: center; */
+    float: center; 
     padding-right: 15px;
     font-size: 35px;
     display: inline-block;
