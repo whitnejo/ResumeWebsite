@@ -285,11 +285,13 @@ header .header-content .header-content-inner p {
     margin-bottom: 0;
 }
 
+
+/*portfolio styling*/
 .portfolio-box {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 650px;
+    max-width: 400px;
     /*max-height: 220px;*/
 }
 
@@ -344,6 +346,12 @@ header .header-content .header-content-inner p {
     .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
         font-size: 22px;
     }
+}
+
+.bookshelf-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
 }
 
 .call-to-action h2 {
