@@ -270,6 +270,13 @@ header .header-content .header-content-inner p {
     margin-top: 0;
 }
 
+.section-divider {
+    background: #f05f40;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin: 15px;
+}
+
 .service-box {
     margin: 50px auto 0;
     max-width: 400px;

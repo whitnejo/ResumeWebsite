@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
 
     <!-- AngularJS -->
-    <!-- <link src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
@@ -46,7 +46,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-app="Bookshelf">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -107,14 +107,14 @@
                 <div class="col-lg-8 col-md-12 text-center">
                     <h2 class="section-heading">About</h2>
                     <hr class="primary">
-                    <p>Grew up on a farm in the middle of nowhere with a distinct thirst for all things technology. After taking apart all the gadgets on the farm(and putting them back together) during childhood, moved to the city to pursue the dream of being an Engineer.</p>
+                    <p>Grew up on a farm in the middle of nowhere with a distinct thirst for all things technology. After taking apart all the gadgets on the farm(and putting them back together) during childhood, I moved to the city to pursue the dream of being an Engineer. A few years later, I now have Computer Engineering degree under my belt and looking to start a new career in Web Development.</p>
                     <p class="signature">Jodie</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="no-padding" id="bookshelf">
-        <div class="container-fluid bookshelf-container">
+        <div class="container-fluid bookshelf-container" ng-controller="MainController">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Bookshelf</h2>
@@ -122,16 +122,19 @@
                 </div>
             </div>
             <div class="row no-gutter">
-                <div class="col-lg-12 col-med-12 col-sm-12">
-                    <a rel="nofollow" href="http://www.amazon.com/gp/product/0735611319/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0735611319&linkCode=as2&tag=delinestatio-20&linkId=EFXPZPKP33SYSPKS" class="portfolio-box">
-                        <img src="img/bookshelf/CodeCoverSmall.png" class="img-responsive center-block" alt="">
+                <div class="col-lg-12 text-center section-divider">
+                    <h3>Currently Reading</h3>
+                </div>    
+                <div ng-repeat="read in current_read" class="col-lg-12 col-med-12 col-sm-12" >
+                    <a rel="nofollow" href="{{ read.link }}" class="portfolio-box">
+                        <img src="{{ read.cover_img }}" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Currently Reading
+                                    {{ read.action }}
                                 </div>
                                 <div class="project-name">
-                                    Code
+                                    {{ read.title }}
                                 </div>
                             </div>
                         </div>
@@ -140,23 +143,27 @@
                 </div>
             </div>
             <div class="row no-gutter">
-                <div class="col-lg-4 col-med-6 col-sm-6 ">
-                    <a rel="nofollow" href="http://www.amazon.com/gp/product/0521809266/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0521809266&linkCode=as2&tag=delinestatio-20&linkId=SM6CT73OWJ2TP3AM" class="portfolio-box">
-                        <img src="img/bookshelf/ArtOfElecCover.jpg" class="img-responsive center-block" alt="">
+                <div class="col-lg-12 text-center section-divider">
+                    <h3>Wait List</h3>
+                </div>
+                <div ng-repeat="wait in wait_list" class="col-lg-4 col-med-6 col-sm-6 ">
+                    <a rel="nofollow" href="{{ wait.link }}" class="portfolio-box">
+                        <img src="{{ wait.cover_img }}" class="img-responsive center-block" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Wait List 
+                                    {{ wait.action }} 
                                 </div>
                                 <div class="project-name">
-                                    The Art of Electronics - 3rd Edition
+                                    {{ wait.title }}
                                 </div>
                             </div>
                         </div>
                     </a>
-                    <img src="http://ir-na.amazon-adsystem.com/e/ir?t=delinestatio-20&l=as2&o=1&a=0521809266" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+                    <img src="{{ wait.amazon_link }}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
                 </div>
-            <div class="col-lg-4 col-med-6 col-sm-6">
+            </div>
+<!--             <div class="col-lg-4 col-med-6 col-sm-6">
                 <a rel="nofollow" href="http://www.amazon.com/gp/product/0071833471/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0071833471&linkCode=as2&tag=delinestatio-20&linkId=Z2G3KLFVG5YHY3H3" class="portfolio-box">
                     <img src="img/bookshelf/PrintingAutodesk123DCoverSmall.png" class="img-responsive center-block" alt="">
                     <div class="portfolio-box-caption">
@@ -187,7 +194,8 @@
                     </div>
                 </a>
                 <img src="http://ir-na.amazon-adsystem.com/e/ir?t=delinestatio-20&l=as2&o=1&a=0439136369" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-            </div>  
+            </div> -->
+        </div>  
     </section>
     <aside class="bg-dark connect">
         <div class="container text-center">
@@ -394,7 +402,12 @@
     <script src="js/vendor/wow.min.js"></script>
 
     <!-- AngularJS -->
-    <script src="js/vendor/angular.min.js"></script>
+    <!-- <script src="js/vendor/angular.min.js"></script> -->
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
