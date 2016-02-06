@@ -92,7 +92,7 @@
             <div class="header-content-inner">
                 <h1>Jodie Whitney</h1>
                 <hr>
-                <p>The Girl-gineer</p>
+                <p>Just an engineer trying to make sense of the world one project at a time.</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Meet Me</a>
             </div>
         </div>
@@ -123,7 +123,7 @@
             </div>
             <div class="row no-gutter">
                 <div class="col-lg-12 text-center section-divider">
-                    <h3>CURRENTLY READING</h3>
+                    <h3 class="bookshelf-label">Currently Reading</h3>
                 </div>    
                 <div ng-repeat="read in current_read" class="col-lg-12 col-med-12 col-sm-12" >
                     <a rel="nofollow" href="{{ read.link }}" class="portfolio-box">
@@ -147,7 +147,7 @@
             </div>
             <div class="row no-gutter">
                 <div class="col-lg-12 text-center section-divider">
-                    <h3>WAIT LIST</h3>
+                    <h3 class="bookshelf-label">Wait List</h3>
                 </div>
                 <div ng-repeat="wait in wait_list" class="col-lg-4 col-med-6 col-sm-6 ">
                     <a rel="nofollow" href="{{ wait.link }}" class="portfolio-box">
@@ -330,6 +330,13 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            
+        </div>
+
     </section>
 
     <section id="contact">

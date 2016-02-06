@@ -274,7 +274,8 @@ header .header-content .header-content-inner p {
     background: #f05f40;
     padding-top: 5px;
     padding-bottom: 10px;
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .service-box {
@@ -359,6 +360,11 @@ header .header-content .header-content-inner p {
     padding-top: 50px;
     padding-bottom: 50px;
     
+}
+
+.bookshelf-label {
+    text-transform: uppercase;
+
 }
 
 .call-to-action h2 {
