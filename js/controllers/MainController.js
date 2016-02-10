@@ -37,4 +37,13 @@ app.controller('MainController', ['$scope', function($scope) {
 			amazon_link: 'http://ir-na.amazon-adsystem.com/e/ir?t=delinestatio-20&l=as2&o=1&a=0439136369'
 		}
 	]
+
+	$scope.blog_list = [
+		{
+			title: "Thing One",
+			img: "img/bookshelf/ArtOfElecCover.jpg",
+			link: "",
+			summary: ""
+		}
+	]
 }]);
