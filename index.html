@@ -4,18 +4,16 @@
 <head>
 
     <!-- favicon call -->
-    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
-    <link rel="icon" type="image/ico" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/ico" href="./favicon.ico">
+    <link rel="icon" type="image/ico" href="./favicon.ico">
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="WebDev" >
 
     <title>Jodie Whitney</title>
-
- 
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -32,7 +30,7 @@
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
 
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!-- <link src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"> -->
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
@@ -46,7 +44,7 @@
 
 </head>
 
-<body id="page-top" ng-app="Bookshelf">
+<body id="page-top">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -58,7 +56,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Resume</a>
+                <a class="navbar-brand page-scroll" href="#page-top">A Resume</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,9 +65,6 @@
                     <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#bookshelf">Bookshelf</a>
-                    </li> 
                     <li>
                         <a class="page-scroll" href="#skills">Skills</a>
                     </li>
@@ -89,11 +84,13 @@
 
     <header>
         <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Jodie Whitney</h1>
-                <hr>
-                <p>Just an engineer trying to make sense of the world one project at a time.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Meet Me</a>
+            <div class="header-content-inner container text-center center">
+                <div class="row text-center center">
+                    <h1>Jodie Whitney</h1>
+                    <hr>
+                    <p>Engineer, among other things</p>
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll">Press the button?</a>
+                </div>
             </div>
         </div>
     </header>
@@ -102,104 +99,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-med-offset-8">
-                    <img class="img-circle" src="img/ProfilePic2.jpg">
+                    <img class="img-circle" src="img/ProfilePic3.jpg">
                 </div>
                 <div class="col-lg-8 col-md-12 text-center">
                     <h2 class="section-heading">About</h2>
                     <hr class="primary">
-                    <p>Grew up on a farm in the middle of nowhere with a distinct thirst for all things technology. After taking apart all the gadgets on the farm(and putting them back together), I moved to the city to pursue the dream of being an Engineer. A few years later, I now have Computer Engineering degree under my belt and a few years experience to back it up.</p>
+                    <p>Grew up on a farm in the middle of nowhere with a distinct thirst for all things technology. After taking apart all the gadgets on the farm(and putting them back together), I moved to the city to pursue the dream of being an Engineer.</p>
                     <p class="signature">Jodie</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="no-padding" id="bookshelf">
-        <div class="container-fluid bookshelf-container" ng-controller="MainController">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">My Bookshelf</h2>
-                  <!--   <hr class="primary"> -->
-                </div>
-            </div>
-            <div class="row no-gutter">
-                <div class="col-lg-12 text-center section-divider">
-                    <h3 class="bookshelf-label">Currently Reading</h3>
-                </div>    
-                <div ng-repeat="read in current_read" class="col-lg-12 col-med-12 col-sm-12" >
-                    <a rel="nofollow" href="{{ read.link }}" class="portfolio-box">
-                        <img src="{{ read.cover_img }}" class="img-responsive center-block" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{ read.action }}
-                                </div>
-                                <div class="project-name">
-                                    {{ read.title }}
-                                </div>
-                                <div class="project-category">
-                                    {{ read.author }}
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <img src="http://ir-na.amazon-adsystem.com/e/ir?t=delinestatio-20&l=as2&o=1&a=0735611319" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-                </div>
-            </div>
-            <div class="row no-gutter">
-                <div class="col-lg-12 text-center section-divider">
-                    <h3 class="bookshelf-label">Wait List</h3>
-                </div>
-                <div ng-repeat="wait in wait_list" class="col-lg-4 col-med-6 col-sm-6 ">
-                    <a rel="nofollow" href="{{ wait.link }}" class="portfolio-box">
-                        <img src="{{ wait.cover_img }}" class="img-responsive center-block" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{ wait.action }} 
-                                </div>
-                                <div class="project-name">
-                                    {{ wait.title }}
-                                </div>
-                                <div class="project-category">
-                                    {{ wait.author }}
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <img src="{{ wait.amazon_link }}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-                </div>
-            </div>
-        </div>  
-    </section>
-
-<!--     <section id="blog">
-        <div class="container" ng-controller="MainController">
-            <div class="row">
-                <!-- <div class="project-category text-faded">
-                    {{ read.action }}
-                </div> -->
-                <!-- <div>
-                    {{ scope.thing }}
-                </div> -->
-                <!-- <div class="project-category">
-                    {{ read.author }}
-                </div> -->
-            <!-- </div> -->
-<!--         </div>
-
-    </section> -->
 
     <aside class="bg-dark connect">
         <div class="container text-center">
             <div class="call-to-action">
+                <h2>Connect with Me</h2>
                 <ul>
-                     <li><a href="https://twitter.com/Jodie_Whitney"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://twitter.com/Jodie_Whitney"><i class="fa fa-twitter"></i></a></li>
                     <li><a target="_blank" href="https://www.linkedin.com/pub/jodie-whitney/2a/344/ba1"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="mailto:Hello@jodiewhitney.rocks"><i class="fa fa-envelope"></i></a></li>
                     <li><a target="_blank" href="https://github.com/whitnejo"><i class="fa fa-github"></i></a></li>
-                </ul>
-                <h2>Connect with Me</h2>
-                
+                </ul>                
             </div>
         </div>
     </aside>
@@ -256,14 +177,14 @@
                     <div class="service-box">
                         <i class="fa fa-4x fa-html5 wow bounceIn text-primary"></i>
                         <h3>HTML & CSS</h3>
-                        <p class="text-muted">Putting words on the screen, making them pretty</p>
+                        <p class="text-muted">Putting words on the screen, making them pretty...</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-file-code-o wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Javascript & jQuery</h3>
-                        <p class="text-muted">Web Programming</p>
+                        <h3>Javascript</h3>
+                        <p class="text-muted">... and Responsive!</p>
                     </div>
                 </div> 
                 <div class="col-lg-4 col-md-12 text-center">
@@ -329,7 +250,8 @@
                 <div class="col-lg-9">
                     <div class="experience-details">
                         <h3>Design Engineer</h3>
-                        <p class="text-muted">Customers would come to us in all sorts of different places in the design process. Some would have a prototype already complete, they needed us to complete a production ready device. On the other end, customers would have an idea of what their device will do but nothing designed. In that case, we'd design everything from the initial prototype to final production model. </p> <p class="text-muted">Laying out boards, writing firmware in C, sourcing material and coordinating with the Production team were daily tasks.</p>
+                        <p class="text-muted">Customers would come to us in all sorts of different places in the design process. Some would have a prototype already complete, they needed us to complete a production ready device. On the other end, customers would have an idea of what their device will do but nothing designed. In that case, we'd design everything from the initial prototype to final production model. </p> 
+                        <p class="text-muted">Laying out boards, writing firmware in C, sourcing material and coordinating with the Production team were daily tasks.</p>
                     </div>
                 </div>
             </div>
@@ -347,59 +269,68 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="experience-dates">
+                        <h3>Minnetronix</h3>
+                        <h5>3/2016-present</h5>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="experience-details">
+                        <h3>Software Engineer</h3>
+                        <p class="text-muted">Currently on a project designing a generation RF therapy device. Device uses a dual ARM processor with FPGA on the same silicon along with a smart display running Linux.</p> 
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Let's Get In Touch!</h2>
-                <hr class="primary">
-                <p>Tell me what got you into tech.</p>
-            </div>
-            <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>507-399-4815<p>
-            </div>
-            <div class="col-lg-4 text-center">
-                <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:Hello@jodiewhitney.rocks">Hello@jodiewhitney.rocks</a></p>
-            </div>
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <i class="fa fa-file-word-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p><a href="../docs/JodieWhitney-DesignEngineer.docx" target="_blank">Download Full Resume</a>
-            </div>
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <hr class="dark">
-                <i class="fa fa-diamond fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p><a target="_blank" href="https://www.etsy.com/shop/DelineationStation">Check out my shop to see my latest designs!</a></p>
-                <hr>
-                    <i class="fa fa-hand-spock-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch</h2>
+                    <hr class="primary">
+                    <p>What got you into tech?</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <hr class="dark">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:Hello@jodiewhitney.rocks">hello@jodiewhitney.rocks</a></p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <hr class="dark">
+                    <i class="fa fa-file-word-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="../docs/JodieWhitney-DesignEngineer.docx" target="_blank">Download Full Resume</a>
+                </div>
+<!--                 <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <hr class="dark">
+                    <i class="fa fa-diamond fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a target="_blank" href="https://www.etsy.com/shop/DelineationStation">Check out my shop to see my latest designs!</a></p>
+                </div> -->
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <hr class="dark">
+                    <i class="fa fa-hand-spock-o fa-3x wow bounceIn blue" data-wow-delay=".1s"></i>
                     <p>Live long and prosper!</p>
+                </div>
             </div>
         </div>
-    </div>   
     </section>
 
     <!-- jQuery -->
-    <script src="js/vendor/jquery.js"></script>
+    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="js/vendor/jquery.easing.min.js"></script>
-    <script src="js/vendor/jquery.fittext.js"></script>
-    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
 
     <!-- AngularJS -->
-    <!-- <script src="js/vendor/angular.min.js"></script> -->
-    <!-- Modules -->
-    <script src="js/app.js"></script>
-
-    <!-- Controllers -->
-    <script src="js/controllers/MainController.js"></script>
+    <!--<script src="js/angular.min.js"></script>--!>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
